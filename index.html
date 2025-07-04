@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユニコーンCRM ダッシュボードハブ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #4caf50;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        .deployment-info {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .deployment-info h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .info-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .quick-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .quick-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .quick-links a:hover {
+            background: #5a67d8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🦄</div>
+            <h1>ユニコーン自動車ファイナンス CRM</h1>
+            <p class="subtitle">ダッシュボードポータル</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <a href="business-intelligence.html" class="dashboard-card">
+                <div class="card-icon">📊</div>
+                <h2 class="card-title">ビジネスインテリジェンス</h2>
+                <p class="card-description">
+                    市場分析、KPI追跡、将来予測を含む包括的なビジネス分析ダッシュボード
+                </p>
+                <span class="status-badge">ライブ</span>
+            </a>
+
+            <a href="operations.html" class="dashboard-card">
+                <div class="card-icon">⚙️</div>
+                <h2 class="card-title">オペレーション分析</h2>
+                <p class="card-description">
+                    業務効率、プロセス最適化、チームパフォーマンスの詳細分析
+                </p>
+                <span class="status-badge">ライブ</span>
+            </a>
+
+            <a href="mobile.html" class="dashboard-card">
+                <div class="card-icon">📱</div>
+                <h2 class="card-title">モバイルダッシュボード</h2>
+                <p class="card-description">
+                    モバイル最適化されたPWA対応ダッシュボード。どこからでもアクセス可能
+                </p>
+                <span class="status-badge">ライブ</span>
+            </a>
+        </div>
+
+        <div class="deployment-info">
+            <h3>システム情報</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">バージョン</div>
+                    <div class="info-value">v2.0.1</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">最終更新</div>
+                    <div class="info-value">2025年1月31日</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">データ同期</div>
+                    <div class="info-value">5分ごと</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">稼働率</div>
+                    <div class="info-value">99.9%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <a href="https://f82jyx0mblu.jp.larksuite.com/docx/ONUpdE9M8oWkd5xmkPijYOCRpxz" target="_blank">
+                📚 ドキュメント
+            </a>
+            <a href="https://f82jyx0mblu.jp.larksuite.com/base/" target="_blank">
+                🗄️ Lark Base
+            </a>
+            <a href="mailto:support@unicorn-finance.jp">
+                💬 サポート
+            </a>
+        </div>
+    </div>
+</body>
+</html>
